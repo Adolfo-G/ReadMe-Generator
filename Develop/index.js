@@ -70,16 +70,16 @@ const questions = () => {
 };
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, read) { 
-    fs.writeFile('README.md',user,(err) =>{
+function writeToFile(fileName, data) { 
+    fs.writeFile(fileName,JSON.parse(data),(err) =>{
+        console.log(err)
     })
 }
 
 // TODO: Create a function to initialize app
 function init() { 
     questions()
-        .then((answers) => fs.writeFileSync('index.html', generateHTML(answers)))
-        .then((data)=>generate.generateMarkdown(data))
+        .then((data)=>writeToFile("README.md",JSON.stringify(generate.generateMarkdown(data))))
 }
 
 // Function call to initialize app

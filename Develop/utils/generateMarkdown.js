@@ -51,8 +51,14 @@ const generateMarkdown=(data) => {
     ${data["tutorial"]}
 
   ## License
-    ${data["license"]}`
-    ;
+    ${data["license"]}
+  
+  ## Questions
+    -For any questions or concerns please reach out to me at
+    github:https://github.com/${github}
+    or
+    email:${email}
+    `;
 }
 
 exports.generateMarkdown = generateMarkdown;

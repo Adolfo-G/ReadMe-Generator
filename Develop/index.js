@@ -66,6 +66,16 @@ const questions = () => {
             name: 'license',
             message: 'What is the license of your project?',
         },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Please enter your email address.',
+        },
+        {
+            type: 'input',
+            name: 'github',
+            message: 'Please enter your github account username',
+        },
     ]);
 };
 

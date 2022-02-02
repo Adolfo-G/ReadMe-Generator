@@ -62,9 +62,10 @@ const questions = () => {
             message: 'Enter the name of your photo: "example.jpeg"',
         },
         {
-            type: 'input',
+            type: 'list',
             name: 'license',
             message: 'What is the license of your project?',
+            choices:["MIT","Apache 2.0", "GNU GPLv3", "ISC","Unlicense",""]
         },
         {
             type: 'input',

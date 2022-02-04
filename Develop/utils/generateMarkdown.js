@@ -12,6 +12,8 @@ function renderLicenseBadge(license) {
       return '[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)'
     case "Unlist":
       return '[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)'
+    default:
+      return ""
  }
 }
 
@@ -43,20 +45,38 @@ function renderLicenseSection(license) {
     return ""
   }
  }
-
- function renderCredits(collab,thirdParty,tutorial){
+// render a collaboration section. If empty return ""
+function collabGen(collab){
+  if(collab){
+    return `-Collaborators\n    ${collab}`
+  }else{
+    return ""
+  }
+}
+// render a section on third party use. if empty return ""
+function thirdPartyGen(thirdParty){
+  if(thirdParty){
+    return `-Third Party Assets\n    ${thirdParty}`
+  }else{
+    return ""
+  }
+}
+//render a section on tutorial usage. if empty return ""
+function tutorialGen(tutorial){
+  if(tutorial){
+    return `-Tutorials Used\n  ${tutorial}`
+  }else{
+    return ""
+  }
+}
+//render a section for credits. if empty return ""
+function renderCredits(collab,thirdParty,tutorial){
    if(collab||thirdParty||tutorial){
      return`
-  ## Credits
-
-  -Collaborators
-    ${collab}
-      
-  -Third Party Assets
-    ${thirdParty}
-      
-  -Tutorials Used
-    ${tutorial}`
+  ## Contributing
+  ${collabGen(collab)}
+  ${thirdPartyGen(thirdParty)}
+  ${tutorialGen(tutorial)}`
     }else{
       return ""
     }
@@ -75,21 +95,17 @@ const generateMarkdown=(data) => {
     ${data["why"]}
   - Problem this aims to solve
     ${data["what"]}
-  - What I learned
-    ${data["learn"]}
 
   ## Table of Contents
-    - [Installation](#installation)
-    - [Usage](#usage)
-    - [Credits](#credits)
-    - [License](#license)
+    * [Installation](#installation)
+    * [Usage](#usage)
+    * [Credits](#credits)
+    * [License](#license)
 
   ## Installation
-
     ${data["installation"]}
 
   ## Usage
-
     ${data["instruction"]}
     ![alt text](assets/images/${data["photo"]})
  ${renderCredits(data["collab"],data["3rdParty"],data["tutorial"])}

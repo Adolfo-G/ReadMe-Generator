@@ -14,7 +14,7 @@ const questions = () => {
         {
             type: 'input',
             name: 'motivation',
-            message: 'What was your motivation?',
+            message: 'What was your motivation to make this?',
         },
         {
             type: 'input',
@@ -29,7 +29,7 @@ const questions = () => {
         {
             type: 'input',
             name: 'installation',
-            message: 'What did you learnWhat are the steps required to install your project ? Provide a step - by - step description of how to get the development environment running?',
+            message: 'What are the steps required to install your project ? \nProvide a step - by - step description of how to get the development environment running?',
         },
         {
             type: 'input',
@@ -53,14 +53,19 @@ const questions = () => {
         },
         {
             type: 'input',
-            name: 'photo',
-            message: 'Enter the name of your photo: "example.jpeg"',
+            name: 'image',
+            message: 'Enter the name of your image: "example.jpeg"',
         },
         {
             type: 'list',
             name: 'license',
             message: 'What is the license of your project?',
             choices:["MIT","Apache 2.0", "GNU GPLv3", "ISC","Unlicense",""]
+        },
+        {
+            type: 'input',
+            name: 'test',
+            message: 'Does this project have any tests. Please enter them here.',
         },
         {
             type: 'input',
@@ -77,15 +82,14 @@ const questions = () => {
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) { 
-    fs.writeFile(fileName,JSON.parse(data),(err) =>{
-        console.log(err)
+    fs.writeFile(fileName,data,(err) =>{
     })
 }
 
 // TODO: Create a function to initialize app
 function init() { 
     questions()
-        .then((data)=>writeToFile("README.md",JSON.stringify(generate.generateMarkdown(data))))
+        .then((data)=>writeToFile("README.md",generate.generateMarkdown(data)))
 }
 
 // Function call to initialize app

@@ -39,7 +39,6 @@ function renderLicenseLink(license) {
 function renderLicenseSection(license) {
   if(license){
     return `
-  ## License
     ${renderLicenseLink(license)}`
   }else{
     return ""
@@ -73,7 +72,6 @@ function tutorialGen(tutorial){
 function renderCredits(collab,thirdParty,tutorial){
    if(collab||thirdParty||tutorial){
      return`
-  ## Contributing
   ${collabGen(collab)}
   ${thirdPartyGen(thirdParty)}
   ${tutorialGen(tutorial)}`
@@ -81,7 +79,13 @@ function renderCredits(collab,thirdParty,tutorial){
       return ""
     }
  }
-
+ function imageGen(image){
+  if(image){
+    return `![alt text](assets/images/${image})`
+  }else{
+    return ""
+  }
+}
 // TODO: Create a function to generate markdown for README
 const generateMarkdown=(data) => {
   return `
@@ -97,19 +101,26 @@ const generateMarkdown=(data) => {
     ${data["what"]}
 
   ## Table of Contents
-    * [Installation](#installation)
-    * [Usage](#usage)
-    * [Credits](#credits)
-    * [License](#license)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [Contributing](#contributing)
+  * [License](#license)
+  * [Test](#test)
+  * [Questions](#questions)
 
   ## Installation
     ${data["installation"]}
 
   ## Usage
     ${data["instruction"]}
-    ![alt text](assets/images/${data["photo"]})
+ ${imageGen(data["image"])}
+
+  ## Contributing
  ${renderCredits(data["collab"],data["3rdParty"],data["tutorial"])}
+  ## License
  ${renderLicenseSection(data["license"])}
+  ## Test
+    -${data["test"]}
   ## Questions
     -For any questions or concerns please reach out to me at
     github:https://github.com/${data["github"]}

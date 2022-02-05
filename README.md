@@ -25,6 +25,7 @@ EXAMPLE: [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-b
 
   ## Usage
     When the application is running you will be presented with a series of prompts. Simply answer the questions and a readme.md file will be generated using the answers you provided. Note: If there is a prompt that is not applicable to you; leave this prompt empty by simply clicking 'enter'.
+    https://watch.screencastify.com/v/B9ucrgL4k5Pi8lGxzTOM
  
 
   ## Contributing-credits

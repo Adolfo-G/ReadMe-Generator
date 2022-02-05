@@ -96,7 +96,7 @@ const generateMarkdown=(data) => {
   - Motivation
 
     ${data["motivation"]}
-  - Fubctionality
+  - Functionality
 
     ${data["functionality"]}
   - Problem this aims to solve?

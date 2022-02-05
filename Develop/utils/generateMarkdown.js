@@ -106,7 +106,7 @@ const generateMarkdown=(data) => {
   ## Table of Contents
   * [Installation](#installation)
   * [Usage](#usage)
-  * [Contributing](#contributing)
+  * [Contributing](#contributing-credits)
   * [License](#license)
   * [Test](#test)
   * [Questions](#questions)
@@ -118,7 +118,7 @@ const generateMarkdown=(data) => {
     ${data["instruction"]}
  ${imageGen(data["image"])}
 
-  ## Contributing/Credits
+  ## Contributing-credits
  ${renderCredits(data["collab"],data["3rdParty"],data["tutorial"])}
   ## License
  ${renderLicenseSection(data["license"])}

@@ -10,7 +10,7 @@ function renderLicenseBadge(license) {
       return '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)'
     case "ISC":
       return '[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)'
-    case "Unlist":
+    case "Unlicense":
       return '[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)'
     default:
       return ""
@@ -29,7 +29,7 @@ function renderLicenseLink(license) {
       return 'https://www.gnu.org/licenses/gpl-3.0'
     case "ISC":
       return 'https://opensource.org/licenses/ISC'
-    case "Unlist":
+    case "Unlicense":
       return 'http://unlicense.org/'
  }
  }
@@ -81,7 +81,7 @@ function renderCredits(collab,thirdParty,tutorial){
  }
  function imageGen(image){
   if(image){
-    return `![alt text](assets/images/${image})`
+    return `![]${image})`
   }else{
     return ""
   }
@@ -94,11 +94,14 @@ const generateMarkdown=(data) => {
   ## Description
 
   - Motivation
+
     ${data["motivation"]}
-  - Purpose of project
-    ${data["why"]}
-  - Problem this aims to solve
-    ${data["what"]}
+  - Fubctionality
+
+    ${data["functionality"]}
+  - Problem this aims to solve?
+
+    ${data["problem"]}
 
   ## Table of Contents
   * [Installation](#installation)
@@ -115,7 +118,7 @@ const generateMarkdown=(data) => {
     ${data["instruction"]}
  ${imageGen(data["image"])}
 
-  ## Contributing
+  ## Contributing/Credits
  ${renderCredits(data["collab"],data["3rdParty"],data["tutorial"])}
   ## License
  ${renderLicenseSection(data["license"])}
@@ -123,8 +126,8 @@ const generateMarkdown=(data) => {
     -${data["test"]}
   ## Questions
     -For any questions or concerns please reach out to me at
-    github:https://github.com/${data["github"]}
-    email:${data["email"]}
+    github:  https://github.com/${data["github"]}
+    email:  ${data["email"]}
     `;
 }
 

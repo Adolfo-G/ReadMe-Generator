@@ -18,12 +18,12 @@ const questions = () => {
         },
         {
             type: 'input',
-            name: 'why',
-            message: 'Why did you build this project?',
+            name: 'functionality',
+            message: 'Describe the functionality of this project.',
         },
         {
             type: 'input',
-            name: 'what',
+            name: 'problem',
             message: 'What problem does it solve?',
         },
         {
@@ -54,7 +54,7 @@ const questions = () => {
         {
             type: 'input',
             name: 'image',
-            message: 'Enter the name of your image: "example.jpeg"',
+            message: 'Enter the relative path of your image: "assets/images/example.jpeg"',
         },
         {
             type: 'list',

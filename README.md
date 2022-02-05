@@ -1,5 +1,6 @@
 https://watch.screencastify.com/v/B9ucrgL4k5Pi8lGxzTOM
-\nEXAMPLE: [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
+
+EXAMPLE: [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
   # ReadMe Generator
   ## Description
   - Motivation
